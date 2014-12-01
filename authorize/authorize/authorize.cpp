@@ -1,5 +1,3 @@
-//
-//  main.cpp
 //  authorize
 //
 //  Created by Anshul Vikram Pandey on 11/30/14.
@@ -74,87 +72,65 @@ std::string get_file_contents(const char *filename)
     throw(errno);
 }
 
-int hexCharToInt(char a){
-    if(a>='0' && a<='9')
-        return(a-48);
-    else if(a>='A' && a<='Z')
-        return(a-55);
-    else
-        return(a-87);
+
+void save_file(const char *filename, string data){
+    std::ofstream outfile(filename);
+    outfile << data;
+    outfile.close();
 }
 
-std::string xorTwoHexStrings(string str1, string str2){
-    std::stringstream XORString;
-    for(int i=0;i<str2.length();i++){
-        XORString << hex << (hexCharToInt(str1[i])^hexCharToInt(str2[i]));
-    }
-    return XORString.str();
-}
-
-
-/*
-string xnorTwoHexStrings(string str1, string str2){
-    std::stringstream XNORString;
-    for(int i=0;i<str2.length();i++){
-        XNORString << hex << (~(hexCharToInt(str1[i])^hexCharToInt(str2[i])));
-    }
-    return XNORString.str();
-}
-
- */
 
 void create_fk(string keyfile, string filename)
 {
-    //cout << "entered function";
-    // cout << keyfile.c_str() << filename;
-    string hexFname;
+
     
-    string base_path = "/Users/avp/Dropbox/Projects/Cryptography/NewProject2/proj2/";
-    //string base_path = "/Users/amd/code/cpp/proj2/";
+    //string base_path = "/Users/avp/Dropbox/Projects/Cryptography/NewProject2/proj2/";
+    string base_path = "/Users/amd/code/cpp/proj2/";
     
     string key_path = base_path + keyfile;
     string file_path = base_path + filename;
+    string efilename_path = base_path + "e" + filename;
     
     
     string key = get_file_contents(key_path.c_str());
-    std::cout << key;
+    std::cout << "-key: " << key << endl;
     
     string fname = get_file_contents(file_path.c_str());
-    std::cout << fname;
+
+    
+    string fkey = key;
+    string pad_fname = key;
+    float key_len = strlen(key.c_str());
     
     
-    try
-    {
-        StringSource(fname, true,
-                     new HexEncoder(
-                                    new StringSink(hexFname)
-                                    ) // HexEncoder
-                     );
+    
+    int i =0;
+    for (int x = 0; x < key_len; x ++ ) {
+        pad_fname[x] = fname[i];
+        i++;
+        if ( i >= strlen(fname.c_str())){
+            i=0;
+        }
     }
-    
-    catch (const CryptoPP::Exception& e)
-    {
-        cerr << e.what() << endl;
-        exit(1);
-    }
-    
-    std::ofstream fn3(base_path+"sfilename.txt");
-    fn3 << hexFname << std::endl;
-    fn3.close();
-    
-    
-    cout << hexFname;
-    std::ofstream outfile(base_path+"fkey.txt");
-    outfile << hexFname + key << std::endl;
-    outfile.close();
-    
-    
-    //const byte* keybyte = (const byte*) key.data();
-    //const byte* fnamebyte = (const byte*) hexFname.data();
-    
     
     
 
+    for(int x=0; x<key_len; x++)
+    {
+        fkey[x]=pad_fname[x]^key[x];
+    }
+    cout  << "fkey: " <<  fkey << endl;
+    
+    
+    string recovered_key = fkey;
+    for(int x=0; x<key_len; x++)
+    {
+        recovered_key[x]=fkey[x]^pad_fname[x];
+
+    }
+    cout  << "rkey: " <<  recovered_key << endl;
+    
+    save_file(efilename_path.c_str(), fkey);
 }
 
 
@@ -162,12 +138,7 @@ int main(int argc, char * argv[])
 {
 
     std::string keyfile, filename;
-    //  cout << argv[1];
-   // keyfile = filepath + argv[1];
-    //filename = filepath + argv[2];
-    // cout << keyfile;
-    // cout << filename;
-    create_fk("key.txt","file.txt");
+    create_fk("key.txt","filename.txt");
     
     return 0;
 }

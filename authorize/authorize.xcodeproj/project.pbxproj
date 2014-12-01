@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8DC521F11A2C208800A6D53D /* libcryptopp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E005E5A1A2BF1B40045469F /* libcryptopp.a */; };
 		9E005E541A2BF1910045469F /* authorize.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E005E531A2BF1910045469F /* authorize.cpp */; };
-		9E005E5B1A2BF1B40045469F /* libcryptopp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E005E5A1A2BF1B40045469F /* libcryptopp.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,7 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9E005E5B1A2BF1B40045469F /* libcryptopp.a in Frameworks */,
+				8DC521F11A2C208800A6D53D /* libcryptopp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,9 +207,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					/Users/avp/Dropbox/Projects/Cryptography/NewProject2/proj2/5.6.2/include/cryptopp,
+					"<Multiple",
+					"values>",
+					/Users/amd/code/cpp/proj2/5.6.2/include/cryptopp,
 				);
 				"HEADER_SEARCH_PATHS[arch=*]" = (
 					"$(inherited)",
@@ -219,6 +219,7 @@
 					"$(inherited)",
 					/Users/avp/Dropbox/Projects/Cryptography/NewProject2/proj2/5.6.2/lib,
 					/Users/avp/Dropbox/Projects/Cryptography/NewProject2/proj2/5.6.2/include/cryptopp/,
+					/Users/amd/code/cpp/proj2/5.6.2/lib,
 				);
 				"LIBRARY_SEARCH_PATHS[arch=*]" = (
 					"$(inherited)",
@@ -232,9 +233,15 @@
 		9E005E591A2BF1910045469F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"<Multiple",
+					"values>",
+					/Users/amd/code/cpp/proj2/5.6.2/include/cryptopp,
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/avp/Dropbox/Projects/Cryptography/NewProject2/proj2/5.6.2/lib,
+					/Users/amd/code/cpp/proj2/5.6.2/lib,
 				);
 				"LIBRARY_SEARCH_PATHS[arch=*]" = (
 					"$(inherited)",
@@ -264,6 +271,7 @@
 				9E005E591A2BF1910045469F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
