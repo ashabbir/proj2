@@ -86,8 +86,9 @@ void create_fk(string keyfile, string p_filename)
     string base_path = "./";
 #ifdef DEBUG
     cout << "running in debug" << endl;
-    //string base_path = "/Users/avp/Dropbox/Projects/Cryptography/NewProject2/proj2/";
-    base_path = "/Users/amd/code/cpp/proj2/";
+    // base_path = "/Users/avp/Dropbox/Projects/Cryptography/NewProject2/proj2/";
+    //base_path = "/Users/amd/code/cpp/proj2/";
+    base_path = "/Users/ahmed/nyu/classes/crypto/proj2/";
 #endif
     
     string key_path = base_path + keyfile;

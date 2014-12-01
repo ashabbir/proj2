@@ -105,8 +105,8 @@ int main(int argc, char* argv[])
     string base_path = "./";
 #ifdef DEBUG
     cout << "running in debug" << endl;
-    base_path = "/Users/amd/code/cpp/proj2/";
-    //base_path = "/Users/ahmed/nyu/classes/crypto/proj2/";
+    //base_path = "/Users/amd/code/cpp/proj2/";
+    base_path = "/Users/ahmed/nyu/classes/crypto/proj2/";
     // base_path = "/Users/avp/Dropbox/Projects/Cryptography/NewProject2/proj2/";
 #endif
     string fkey_path = base_path + argv[3];
