@@ -86,7 +86,13 @@ int main(int argc, char* argv[])
     
     //save the key file in hex format
     //string base_path = "/Users/avp/Dropbox/Projects/Cryptography/NewProject2/proj2/";
-    string base_path = "/Users/amd/code/cpp/proj2/";
+    string base_path = "./";
+#ifdef DEBUG
+    cout << "running in debug.." << endl;
+    base_path = "/Users/amd/code/cpp/proj2/";
+#endif
+
+    
     string key_path = base_path + "key.txt";
 
     std::ofstream outfile(key_path);

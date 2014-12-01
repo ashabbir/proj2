@@ -74,7 +74,7 @@ std::string get_file_contents(const char *filename)
         in.close();
         return(contents);
     }
-    cout << "file not found" << endl;
+    cout << "file not found" << filename << endl;
     throw(errno);
 }
 
@@ -102,9 +102,13 @@ int main(int argc, char* argv[])
     AutoSeededRandomPool prng;
     
     
-    //string base_path = "/Users/avp/Dropbox/Projects/Cryptography/NewProject2/proj2/";
-    string base_path = "/Users/amd/code/cpp/proj2/";
-    
+    string base_path = "./";
+#ifdef DEBUG
+    cout << "running in debug" << endl;
+//    base_path = "/Users/amd/code/cpp/proj2/";
+    base_path = "/Users/ahmed/nyu/classes/crypto/proj2/";
+    // base_path = "/Users/avp/Dropbox/Projects/Cryptography/NewProject2/proj2/";
+#endif
     string fkey_path = base_path + argv[3];
     string efile_path = base_path + argv[1];
     string efilename_path = base_path + argv[2];
@@ -152,15 +156,14 @@ int main(int argc, char* argv[])
             i=0;
         }
     }
-    //cout << "pad filename " << pad_fname << endl;
+    cout << "pad filename " << pad_fname << endl;
     string recovered_key = fkey_hex;
     for(int x=0; x<key_len; x++)
     {
         recovered_key[x]=fkey_hex[x]^pad_fname[x];
-        
     }
     
-    //cout << "rkey  " << recovered_key << endl;
+    cout << "rkey  " << recovered_key << endl;
     cipher_hex = get_file_contents(efile_path.c_str());
 
     iv_hex = cipher_hex.substr(0, 32);
@@ -186,10 +189,11 @@ int main(int argc, char* argv[])
                                 ) // HexEncoder
                  ); // StringSource
 
-    //cout << fkey_hex<< endl << fkey <<endl;
+    cout << fkey_hex<< endl << fkey <<endl;
     
     try
     {
+        cout << "*" << endl;
         //decrypt using key need to change this
         CBC_Mode< AES >::Decryption d;
         d.SetKeyWithIV((byte*)fkey.c_str(), fkey.size(), (byte*)iv.c_str());
@@ -198,7 +202,8 @@ int main(int argc, char* argv[])
                        new StreamTransformationFilter(d,
                                                       new StringSink(message)
                                                       ) // StreamTransformationFilter
-                       ); // StringSource
+                       );
+
         
 #if 0
         StreamTransformationFilter filter(d);
@@ -217,6 +222,7 @@ int main(int argc, char* argv[])
     }
     catch (const CryptoPP::Exception& d)
     {
+        cout << "*" << endl;
         cerr << d.what() << endl;
         exit(1);
     }
