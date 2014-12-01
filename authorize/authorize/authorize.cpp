@@ -90,7 +90,8 @@ void create_fk(string keyfile, string p_filename)
     string key_path = base_path + keyfile;
     string file_path = base_path + p_filename;
     string fkey_path = base_path + "f" + keyfile;
-    
+    string sfile_path = base_path + "s"+  p_filename;
+
     
     string key = get_file_contents(key_path.c_str());
     //std::cout << "-key: " << key << endl;
@@ -114,6 +115,8 @@ void create_fk(string keyfile, string p_filename)
         cerr << e.what() << endl;
         exit(1);
     }
+    save_file(sfile_path.c_str(), filename2);
+
     //cout << "filename " << filename2 << endl;
     
     string fkey = key;
@@ -154,7 +157,8 @@ void create_fk(string keyfile, string p_filename)
         cerr << e.what() << endl;
         exit(1);
     }
-    
+    save_file(fkey_path.c_str(), final_key);
+
     
     /*
     test recovery of fkey
@@ -184,7 +188,6 @@ void create_fk(string keyfile, string p_filename)
     cout  << "rkey: " <<  recovered_key << endl;
     cout << " key: " << key << endl;
 */
-    save_file(fkey_path.c_str(), final_key);
 }
 
 
