@@ -80,23 +80,56 @@ std::string get_file_contents(const char *filename)
         in.close();
         return(contents);
     }
+    cout << "file not found" << endl;
     throw(errno);
 }
 
+
+void save_file(const char *filename, string data){
+    std::ofstream outfile(filename);
+    outfile << data;
+    outfile.close();
+}
 
 
 
 
 int main(int argc, char* argv[])
 {
-    string cipher, cipher_hex , iv_hex, key , key_hex , messege, iv_cipher_hex;
+    
+    
+    if (argc < 4) {
+        std::cerr << argc <<endl <<"Usage: " << argv[0] <<endl;
+        return 1;
+    }
+    
+    
+    //cout << "0: " << argv[0]<< endl << "1: " <<argv[1] << endl << "2: " <<argv[2]<< endl << "3: " <<argv[3] << endl;
+    
+    
+    string cipher, cipher_hex , iv_hex, key , key_hex , messege, iv_cipher_hex, filename , filename2;
     AutoSeededRandomPool prng;
+    
     
     //string base_path = "/Users/avp/Dropbox/Projects/Cryptography/NewProject2/proj2/";
     string base_path = "/Users/amd/code/cpp/proj2/";
     
-    string key_path = base_path + "key.txt";
-    string file_path = base_path + "file.txt";
+    string key_path = base_path + argv[1];
+    string file_path = base_path + argv[2];
+    string cypher_path = base_path + "e" + argv[2];
+    string filename_path = base_path + argv[3];
+    string filename2_path = base_path + "e" + argv[3];
+    
+    
+    //cout << "0: " << key_path << endl << "1: " << file_path << endl << "2: " <<  cypher_path << endl << "3: " << filename_path << endl;
+    
+    key_hex = get_file_contents(key_path.c_str());
+    messege = get_file_contents(file_path.c_str());
+    filename = get_file_contents(filename_path.c_str());
+    
+    //REGION GENERATE NEW FILENAME
+    filename2 = "somethingelse.txt" ;
+    save_file(filename2_path.c_str() , filename2);
     
     //GENERATE IV
     byte iv[AES::BLOCKSIZE];
@@ -109,20 +142,18 @@ int main(int argc, char* argv[])
                                 ) // HexEncoder
                  ); // StringSource
 
-    key_hex = get_file_contents(key_path.c_str());
-    messege = get_file_contents(file_path.c_str());
    
     try
     {
         
-        cout << key_hex << endl;
+        //cout << key_hex << endl;
         StringSource(key_hex, true,
                      new HexDecoder(
                                     new StringSink(key)
                                     ) // HexEncoder
                      ); // StringSource
 
-        cout << key << endl;
+        //cout << key << endl;
         
         //encrypt
         CBC_Mode< AES> ::Encryption e;
@@ -162,17 +193,12 @@ int main(int argc, char* argv[])
     
     iv_cipher_hex = iv_hex + cipher_hex;
     
-    string cypher_file = base_path + "cypher.txt";
-    std::ofstream outfile(cypher_file.c_str());
-    outfile << iv_cipher_hex;
-    outfile.close();
+    //save cypherfile
+    save_file(cypher_path.c_str() , iv_cipher_hex);
     
-/*
-    cout << cipher <<endl  ;
-    cout << cipher_hex <<endl  ;
-    cout << iv_cipher_hex <<endl  ;
- */
+
+    //cout << cipher <<endl << cipher_hex <<endl << iv_cipher_hex <<endl  ;
+    //cout << "ENCRYPTED !!!!" <<endl  ;
     
-    cout << "ENCRYPTED !!!!" <<endl  ;
     return 0;
 }
