@@ -80,7 +80,7 @@ void save_file(const char *filename, string data){
 }
 
 
-void create_fk(string keyfile, string filename)
+void create_fk(string keyfile, string p_filename)
 {
 
     
@@ -88,15 +88,33 @@ void create_fk(string keyfile, string filename)
     string base_path = "/Users/amd/code/cpp/proj2/";
     
     string key_path = base_path + keyfile;
-    string file_path = base_path + filename;
-    string efilename_path = base_path + "e" + filename;
+    string file_path = base_path + p_filename;
+    string fkey_path = base_path + "f" + keyfile;
     
     
     string key = get_file_contents(key_path.c_str());
-    std::cout << "-key: " << key << endl;
+    //std::cout << "-key: " << key << endl;
     
-    string fname = get_file_contents(file_path.c_str());
-
+    string filename = get_file_contents(file_path.c_str());
+    string filename2;
+    //cout << "filename " << filename << endl;
+    
+    
+    //REGION GENERATE NEW FILENAME
+    try
+    {
+        StringSource(filename, true,
+                     new HexEncoder(
+                                    new StringSink(filename2)
+                                    ) // HexEncoder
+                     );
+    }
+    catch (const CryptoPP::Exception& e)
+    {
+        cerr << e.what() << endl;
+        exit(1);
+    }
+    //cout << "filename " << filename2 << endl;
     
     string fkey = key;
     string pad_fname = key;
@@ -106,22 +124,57 @@ void create_fk(string keyfile, string filename)
     
     int i =0;
     for (int x = 0; x < key_len; x ++ ) {
-        pad_fname[x] = fname[i];
+        pad_fname[x] = filename2[i];
         i++;
-        if ( i >= strlen(fname.c_str())){
+        if ( i >= strlen(filename2.c_str())){
             i=0;
         }
     }
     
     
-
+    //make fkey
     for(int x=0; x<key_len; x++)
     {
         fkey[x]=pad_fname[x]^key[x];
     }
-    cout  << "fkey: " <<  fkey << endl;
+    //cout  << "fkey: " <<  fkey << endl;
     
     
+    string final_key;
+    try
+    {
+        StringSource(fkey, true,
+                     new HexEncoder(
+                                    new StringSink(final_key)
+                                    ) // HexEncoder
+                     );
+    }
+    catch (const CryptoPP::Exception& e)
+    {
+        cerr << e.what() << endl;
+        exit(1);
+    }
+    
+    
+    /*
+    test recovery of fkey
+
+    string temp_temp_key;
+    try
+    {
+        StringSource(temp_key, true,
+                     new HexDecoder(
+                                    new StringSink(temp_temp_key)
+                                    )
+                     );
+    }
+    catch (const CryptoPP::Exception& e)
+    {
+        cerr << e.what() << endl;
+        exit(1);
+    }
+    
+
     string recovered_key = fkey;
     for(int x=0; x<key_len; x++)
     {
@@ -129,8 +182,9 @@ void create_fk(string keyfile, string filename)
 
     }
     cout  << "rkey: " <<  recovered_key << endl;
-    
-    save_file(efilename_path.c_str(), fkey);
+    cout << " key: " << key << endl;
+*/
+    save_file(fkey_path.c_str(), final_key);
 }
 
 
@@ -139,7 +193,7 @@ int main(int argc, char * argv[])
 
     std::string keyfile, filename;
     create_fk("key.txt","filename.txt");
-    
+    cout << "Done"<<endl;
     return 0;
 }
 

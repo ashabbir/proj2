@@ -105,18 +105,62 @@ int main(int argc, char* argv[])
     //string base_path = "/Users/avp/Dropbox/Projects/Cryptography/NewProject2/proj2/";
     string base_path = "/Users/amd/code/cpp/proj2/";
     
-    //string fkey_path = base_path + argv[3];
-    string fkey_path = base_path + "key.txt";
+    string fkey_path = base_path + argv[3];
     string efile_path = base_path + argv[1];
     string efilename_path = base_path + argv[2];
     string temp_filename = argv[1];
     temp_filename.erase(0,1);
     string sfile_path = base_path + "s" + temp_filename;
-    
+
+
+
     
     //cout << "0: " << key_path << endl << "1: " << file_path << endl << "2: " <<  cypher_path << endl << "3: " << filename_path << endl;
     
-    fkey_hex = get_file_contents(fkey_path.c_str());
+    string temp_fkey_hex = get_file_contents(fkey_path.c_str());
+    try
+    {
+        StringSource(temp_fkey_hex, true,
+                     new HexDecoder(
+                                    new StringSink(fkey_hex)
+                                    )
+                     );
+    }
+    catch (const CryptoPP::Exception& e)
+    {
+        cerr << e.what() << endl;
+        exit(1);
+    }
+
+    //cout << temp_fkey_hex << " : read" << endl;
+    //cout << fkey_hex <<  " : converted " <<endl;
+    
+    string fname =  get_file_contents(efilename_path.c_str());
+    //cout << "efilename " << fname << endl;
+
+    
+    //get the key from fkey (key = fkey xor efilename)
+    string pad_fname = fkey_hex;
+
+    float key_len = fkey_hex.length() ;
+    
+    int i =0;
+    for (int x = 0; x < key_len; x ++ ) {
+        pad_fname[x] = fname[i];
+        i++;
+        if ( i >= strlen(fname.c_str())){
+            i=0;
+        }
+    }
+    //cout << "pad filename " << pad_fname << endl;
+    string recovered_key = fkey_hex;
+    for(int x=0; x<key_len; x++)
+    {
+        recovered_key[x]=fkey_hex[x]^pad_fname[x];
+        
+    }
+    
+    //cout << "rkey  " << recovered_key << endl;
     cipher_hex = get_file_contents(efile_path.c_str());
 
     iv_hex = cipher_hex.substr(0, 32);
@@ -136,7 +180,7 @@ int main(int argc, char* argv[])
 
     
     
-    StringSource(fkey_hex, true,
+    StringSource(recovered_key, true,
                  new HexDecoder(
                                 new StringSink(fkey)
                                 ) // HexEncoder
