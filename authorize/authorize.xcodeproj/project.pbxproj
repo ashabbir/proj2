@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8D3209951A2BC939004DF7FF /* preprocess.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8D3209941A2BC939004DF7FF /* preprocess.cpp */; };
-		9E005E461A2BEFEC0045469F /* libcryptopp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D32099B1A2BC969004DF7FF /* libcryptopp.a */; };
+		9E005E541A2BF1910045469F /* authorize.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E005E531A2BF1910045469F /* authorize.cpp */; };
+		9E005E5B1A2BF1B40045469F /* libcryptopp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E005E5A1A2BF1B40045469F /* libcryptopp.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		8D32098F1A2BC939004DF7FF /* CopyFiles */ = {
+		9E005E4E1A2BF1910045469F /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -24,112 +24,112 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		8D3209911A2BC939004DF7FF /* preprocess */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = preprocess; sourceTree = BUILT_PRODUCTS_DIR; };
-		8D3209941A2BC939004DF7FF /* preprocess.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = preprocess.cpp; sourceTree = "<group>"; };
-		8D32099B1A2BC969004DF7FF /* libcryptopp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcryptopp.a; path = ../5.6.2/lib/libcryptopp.a; sourceTree = "<group>"; };
+		9E005E501A2BF1910045469F /* authorize */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = authorize; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E005E531A2BF1910045469F /* authorize.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = authorize.cpp; sourceTree = "<group>"; };
+		9E005E5A1A2BF1B40045469F /* libcryptopp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcryptopp.a; path = ../5.6.2/lib/libcryptopp.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		8D32098E1A2BC939004DF7FF /* Frameworks */ = {
+		9E005E4D1A2BF1910045469F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9E005E461A2BEFEC0045469F /* libcryptopp.a in Frameworks */,
+				9E005E5B1A2BF1B40045469F /* libcryptopp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8D3209881A2BC939004DF7FF = {
+		9E005E471A2BF1910045469F = {
 			isa = PBXGroup;
 			children = (
-				8D32099B1A2BC969004DF7FF /* libcryptopp.a */,
-				8D3209931A2BC939004DF7FF /* preprocess */,
-				8D3209921A2BC939004DF7FF /* Products */,
+				9E005E5A1A2BF1B40045469F /* libcryptopp.a */,
+				9E005E521A2BF1910045469F /* authorize */,
+				9E005E511A2BF1910045469F /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		8D3209921A2BC939004DF7FF /* Products */ = {
+		9E005E511A2BF1910045469F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8D3209911A2BC939004DF7FF /* preprocess */,
+				9E005E501A2BF1910045469F /* authorize */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		8D3209931A2BC939004DF7FF /* preprocess */ = {
+		9E005E521A2BF1910045469F /* authorize */ = {
 			isa = PBXGroup;
 			children = (
-				8D3209941A2BC939004DF7FF /* preprocess.cpp */,
+				9E005E531A2BF1910045469F /* authorize.cpp */,
 			);
-			path = preprocess;
+			path = authorize;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8D3209901A2BC939004DF7FF /* preprocess */ = {
+		9E005E4F1A2BF1910045469F /* authorize */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8D3209981A2BC939004DF7FF /* Build configuration list for PBXNativeTarget "preprocess" */;
+			buildConfigurationList = 9E005E571A2BF1910045469F /* Build configuration list for PBXNativeTarget "authorize" */;
 			buildPhases = (
-				8D32098D1A2BC939004DF7FF /* Sources */,
-				8D32098E1A2BC939004DF7FF /* Frameworks */,
-				8D32098F1A2BC939004DF7FF /* CopyFiles */,
+				9E005E4C1A2BF1910045469F /* Sources */,
+				9E005E4D1A2BF1910045469F /* Frameworks */,
+				9E005E4E1A2BF1910045469F /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = preprocess;
-			productName = preprocess;
-			productReference = 8D3209911A2BC939004DF7FF /* preprocess */;
+			name = authorize;
+			productName = authorize;
+			productReference = 9E005E501A2BF1910045469F /* authorize */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		8D3209891A2BC939004DF7FF /* Project object */ = {
+		9E005E481A2BF1910045469F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0610;
-				ORGANIZATIONNAME = NYU;
+				ORGANIZATIONNAME = "Anshul Vikram Pandey";
 				TargetAttributes = {
-					8D3209901A2BC939004DF7FF = {
+					9E005E4F1A2BF1910045469F = {
 						CreatedOnToolsVersion = 6.1;
 					};
 				};
 			};
-			buildConfigurationList = 8D32098C1A2BC939004DF7FF /* Build configuration list for PBXProject "preprocess" */;
+			buildConfigurationList = 9E005E4B1A2BF1910045469F /* Build configuration list for PBXProject "authorize" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 8D3209881A2BC939004DF7FF;
-			productRefGroup = 8D3209921A2BC939004DF7FF /* Products */;
+			mainGroup = 9E005E471A2BF1910045469F;
+			productRefGroup = 9E005E511A2BF1910045469F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8D3209901A2BC939004DF7FF /* preprocess */,
+				9E005E4F1A2BF1910045469F /* authorize */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		8D32098D1A2BC939004DF7FF /* Sources */ = {
+		9E005E4C1A2BF1910045469F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D3209951A2BC939004DF7FF /* preprocess.cpp in Sources */,
+				9E005E541A2BF1910045469F /* authorize.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		8D3209961A2BC939004DF7FF /* Debug */ = {
+		9E005E551A2BF1910045469F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -162,14 +162,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
-		8D3209971A2BC939004DF7FF /* Release */ = {
+		9E005E561A2BF1910045469F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -197,45 +197,50 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 			};
 			name = Release;
 		};
-		8D3209991A2BC939004DF7FF /* Debug */ = {
+		9E005E581A2BF1910045469F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/Users/avp/Dropbox/Projects/Cryptography/NewProject2/proj2/5.6.2/include/cryptopp,
+				);
 				"HEADER_SEARCH_PATHS[arch=*]" = (
 					"$(inherited)",
-					/Users/avp/Dropbox/Projects/Cryptography/NewProject2/proj2/5.6.2/include/cryptopp,
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					/Users/amd/code/cpp/proj2/5.6.2/include/cryptopp,
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/amd/code/cpp/proj2/5.6.2/lib,
 					/Users/avp/Dropbox/Projects/Cryptography/NewProject2/proj2/5.6.2/lib,
+					/Users/avp/Dropbox/Projects/Cryptography/NewProject2/proj2/5.6.2/include/cryptopp/,
 				);
-				MACOSX_DEPLOYMENT_TARGET = "";
+				"LIBRARY_SEARCH_PATHS[arch=*]" = (
+					"$(inherited)",
+					/Users/avp/Dropbox/Projects/Cryptography/NewProject2/proj2/5.6.2/lib,
+					/Users/avp/Dropbox/Projects/Cryptography/NewProject2/proj2/5.6.2/include/cryptopp,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		8D32099A1A2BC939004DF7FF /* Release */ = {
+		9E005E591A2BF1910045469F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"HEADER_SEARCH_PATHS[arch=*]" = (
-					"$(inherited)",
-					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					/Users/amd/code/cpp/proj2/5.6.2/include/cryptopp,
-				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/amd/code/cpp/proj2/5.6.2/lib,
 					/Users/avp/Dropbox/Projects/Cryptography/NewProject2/proj2/5.6.2/lib,
 				);
-				MACOSX_DEPLOYMENT_TARGET = "";
+				"LIBRARY_SEARCH_PATHS[arch=*]" = (
+					"$(inherited)",
+					/Users/avp/Dropbox/Projects/Cryptography/NewProject2/proj2/5.6.2/lib,
+					/Users/avp/Dropbox/Projects/Cryptography/NewProject2/proj2/5.6.2/include/cryptopp/,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -243,25 +248,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8D32098C1A2BC939004DF7FF /* Build configuration list for PBXProject "preprocess" */ = {
+		9E005E4B1A2BF1910045469F /* Build configuration list for PBXProject "authorize" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8D3209961A2BC939004DF7FF /* Debug */,
-				8D3209971A2BC939004DF7FF /* Release */,
+				9E005E551A2BF1910045469F /* Debug */,
+				9E005E561A2BF1910045469F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8D3209981A2BC939004DF7FF /* Build configuration list for PBXNativeTarget "preprocess" */ = {
+		9E005E571A2BF1910045469F /* Build configuration list for PBXNativeTarget "authorize" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8D3209991A2BC939004DF7FF /* Debug */,
-				8D32099A1A2BC939004DF7FF /* Release */,
+				9E005E581A2BF1910045469F /* Debug */,
+				9E005E591A2BF1910045469F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 8D3209891A2BC939004DF7FF /* Project object */;
+	rootObject = 9E005E481A2BF1910045469F /* Project object */;
 }

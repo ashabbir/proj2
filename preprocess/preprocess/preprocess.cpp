@@ -89,9 +89,14 @@ std::string get_file_contents(const char *filename)
 
 int main(int argc, char* argv[])
 {
-    string cipher, cipher_hex, iv_hex, key , key_hex , messege, iv_cipher_hex;
+    string cipher, o, iv_hex, key , key_hex , messege, iv_cipher_hex;
     AutoSeededRandomPool prng;
     
+    string base_path = "/Users/avp/Dropbox/Projects/Cryptography/NewProject2/proj2/";
+    //string base_path = "/Users/amd/code/cpp/proj2/";
+    
+    string key_path = base_path + "key.txt";
+    string file_path = base_path + "file.txt";
     
     //GENERATE IV
     byte iv[AES::BLOCKSIZE];
@@ -103,11 +108,9 @@ int main(int argc, char* argv[])
                                 new StringSink(iv_hex)
                                 ) // HexEncoder
                  ); // StringSource
-    
-    //cout <<  iv_hex << endl;
-    
-    key_hex = get_file_contents("/Users/amd/code/cpp/proj2/key.txt");
-    messege = get_file_contents("/Users/amd/code/cpp/proj2/file.txt");
+
+    key_hex = get_file_contents(key_path.c_str());
+    messege = get_file_contents(file_path.c_str());
     
     try
     {
@@ -159,7 +162,8 @@ int main(int argc, char* argv[])
     
     iv_cipher_hex = iv_hex + cipher_hex;
     
-    std::ofstream outfile("/Users/amd/code/cpp/proj2/cyphered.txt");
+    string cypher_file = base_path + "cypher.txt";
+    std::ofstream outfile(cypher_file.c_str());
     outfile << iv_cipher_hex;
     outfile.close();
     
