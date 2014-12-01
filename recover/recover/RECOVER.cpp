@@ -51,6 +51,15 @@ using CryptoPP::SecByteBlock;
 
 using namespace CryptoPP;
 
+#include <stdio.h>  /* defines FILENAME_MAX */
+#ifdef WINDOWS
+    #include <direct.h>
+    #define GetCurrentDir _getcwd
+#else
+    #include <unistd.h>
+    #define GetCurrentDir getcwd
+#endif
+
 
 std::string get_file_contents(const char *filename)
 {
@@ -81,14 +90,11 @@ void save_file(const char *filename, string data){
 
 int main(int argc, char* argv[])
 {
-    
-    
+
     if (argc < 4) {
         std::cerr << argc <<endl <<"Usage: " << argv[0] <<endl;
         return 1;
     }
-    
-    
     //cout << "0: " << argv[0]<< endl << "1: " <<argv[1] << endl << "2: " <<argv[2]<< endl << "3: " <<argv[3] << endl;
     
     
