@@ -111,8 +111,13 @@ int main(int argc, char* argv[])
     AutoSeededRandomPool prng;
     
     
-    //string base_path = "/Users/avp/Dropbox/Projects/Cryptography/NewProject2/proj2/";
-    string base_path = "/Users/amd/code/cpp/proj2/";
+    
+    string base_path = "./";
+#ifdef DEBUG
+    cout << "running in debug" << endl;
+    base_path = "/Users/amd/code/cpp/proj2/";
+    // base_path = "/Users/avp/Dropbox/Projects/Cryptography/NewProject2/proj2/";
+#endif
     
     string key_path = base_path + argv[1];
     string file_path = base_path + argv[2];

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8D3208F21A2BC764004DF7FF /* keygen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8D3208F11A2BC764004DF7FF /* keygen.cpp */; };
-		8D3209871A2BC8B2004DF7FF /* libcryptopp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D3209841A2BC83D004DF7FF /* libcryptopp.a */; };
+		E25285021A2C44F90090A096 /* libcryptopp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E25285011A2C44F90090A096 /* libcryptopp.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -165,6 +165,7 @@
 		8D3209841A2BC83D004DF7FF /* libcryptopp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcryptopp.a; sourceTree = "<group>"; };
 		8D3209851A2BC83D004DF7FF /* License.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = License.txt; sourceTree = "<group>"; };
 		8D3209861A2BC83D004DF7FF /* Readme.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Readme.txt; sourceTree = "<group>"; };
+		E25285011A2C44F90090A096 /* libcryptopp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcryptopp.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,7 +173,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D3209871A2BC8B2004DF7FF /* libcryptopp.a in Frameworks */,
+				E25285021A2C44F90090A096 /* libcryptopp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,6 +183,7 @@
 		8D3208E51A2BC764004DF7FF = {
 			isa = PBXGroup;
 			children = (
+				E25285011A2C44F90090A096 /* libcryptopp.a */,
 				8D3208F81A2BC83D004DF7FF /* 5.6.2 */,
 				8D3208F01A2BC764004DF7FF /* keygen */,
 				8D3208EF1A2BC764004DF7FF /* Products */,
@@ -515,9 +517,14 @@
 		8D3208F61A2BC764004DF7FF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(PROJECT_DIR)/**",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/amd/code/cpp/proj2/5.6.2/lib,
+					"$(PROJECT_DIR)/**",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -526,9 +533,14 @@
 		8D3208F71A2BC764004DF7FF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(PROJECT_DIR)/**",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/amd/code/cpp/proj2/5.6.2/lib,
+					"$(PROJECT_DIR)/**",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -553,6 +565,7 @@
 				8D3208F71A2BC764004DF7FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

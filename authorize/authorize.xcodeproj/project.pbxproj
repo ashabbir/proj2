@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8DC521F11A2C208800A6D53D /* libcryptopp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E005E5A1A2BF1B40045469F /* libcryptopp.a */; };
 		9E005E541A2BF1910045469F /* authorize.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E005E531A2BF1910045469F /* authorize.cpp */; };
+		E25285901A2C4B370090A096 /* libcryptopp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E252858D1A2C4A480090A096 /* libcryptopp.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,7 +26,7 @@
 /* Begin PBXFileReference section */
 		9E005E501A2BF1910045469F /* authorize */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = authorize; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E005E531A2BF1910045469F /* authorize.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = authorize.cpp; sourceTree = "<group>"; };
-		9E005E5A1A2BF1B40045469F /* libcryptopp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcryptopp.a; path = ../5.6.2/lib/libcryptopp.a; sourceTree = "<group>"; };
+		E252858D1A2C4A480090A096 /* libcryptopp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcryptopp.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,7 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DC521F11A2C208800A6D53D /* libcryptopp.a in Frameworks */,
+				E25285901A2C4B370090A096 /* libcryptopp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,7 +44,7 @@
 		9E005E471A2BF1910045469F = {
 			isa = PBXGroup;
 			children = (
-				9E005E5A1A2BF1B40045469F /* libcryptopp.a */,
+				E252858D1A2C4A480090A096 /* libcryptopp.a */,
 				9E005E521A2BF1910045469F /* authorize */,
 				9E005E511A2BF1910045469F /* Products */,
 			);
@@ -209,23 +209,17 @@
 				HEADER_SEARCH_PATHS = (
 					"<Multiple",
 					"values>",
-					/Users/amd/code/cpp/proj2/5.6.2/include/cryptopp,
+					"$(PROJECT_DIR)/**",
 				);
 				"HEADER_SEARCH_PATHS[arch=*]" = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
 				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					/Users/avp/Dropbox/Projects/Cryptography/NewProject2/proj2/5.6.2/lib,
-					/Users/avp/Dropbox/Projects/Cryptography/NewProject2/proj2/5.6.2/include/cryptopp/,
-					/Users/amd/code/cpp/proj2/5.6.2/lib,
+					"$(PROJECT_DIR)/**",
+					"$(PROJECT_DIR)",
 				);
-				"LIBRARY_SEARCH_PATHS[arch=*]" = (
-					"$(inherited)",
-					/Users/avp/Dropbox/Projects/Cryptography/NewProject2/proj2/5.6.2/lib,
-					/Users/avp/Dropbox/Projects/Cryptography/NewProject2/proj2/5.6.2/include/cryptopp,
-				);
+				"LIBRARY_SEARCH_PATHS[arch=*]" = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -236,18 +230,10 @@
 				HEADER_SEARCH_PATHS = (
 					"<Multiple",
 					"values>",
-					/Users/amd/code/cpp/proj2/5.6.2/include/cryptopp,
+					"$(PROJECT_DIR)/**",
 				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					/Users/avp/Dropbox/Projects/Cryptography/NewProject2/proj2/5.6.2/lib,
-					/Users/amd/code/cpp/proj2/5.6.2/lib,
-				);
-				"LIBRARY_SEARCH_PATHS[arch=*]" = (
-					"$(inherited)",
-					/Users/avp/Dropbox/Projects/Cryptography/NewProject2/proj2/5.6.2/lib,
-					/Users/avp/Dropbox/Projects/Cryptography/NewProject2/proj2/5.6.2/include/cryptopp/,
-				);
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)";
+				"LIBRARY_SEARCH_PATHS[arch=*]" = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

@@ -69,6 +69,7 @@ std::string get_file_contents(const char *filename)
         in.close();
         return(contents);
     }
+    cout << "file not found " << filename << endl;
     throw(errno);
 }
 
@@ -82,10 +83,12 @@ void save_file(const char *filename, string data){
 
 void create_fk(string keyfile, string p_filename)
 {
-
-    
+    string base_path = "./";
+#ifdef DEBUG
+    cout << "running in debug" << endl;
     //string base_path = "/Users/avp/Dropbox/Projects/Cryptography/NewProject2/proj2/";
-    string base_path = "/Users/amd/code/cpp/proj2/";
+    base_path = "/Users/amd/code/cpp/proj2/";
+#endif
     
     string key_path = base_path + keyfile;
     string file_path = base_path + p_filename;
@@ -193,10 +196,17 @@ void create_fk(string keyfile, string p_filename)
 
 int main(int argc, char * argv[])
 {
+    if (argc < 3) {
+        std::cerr << argc <<endl <<"Usage: " << argv[0] <<endl;
+        return 1;
+    }
+    
+   
+    string keyarg = argv[1];
+    string filearg = argv[2];
 
-    std::string keyfile, filename;
-    create_fk("key.txt","filename.txt");
-    cout << "Done"<<endl;
+    create_fk(keyarg,filearg);
+    cout << "AUTHORIZED !!"<<endl;
     return 0;
 }
 
