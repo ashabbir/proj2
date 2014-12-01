@@ -89,7 +89,7 @@ std::string get_file_contents(const char *filename)
 
 int main(int argc, char* argv[])
 {
-    string cipher, o, iv_hex, key , key_hex , messege, iv_cipher_hex;
+    string cipher, o, iv_hex, key , key_hex , messege, iv_cipher_hex, cipher_hex;
     AutoSeededRandomPool prng;
     
     string base_path = "/Users/avp/Dropbox/Projects/Cryptography/NewProject2/proj2/";
