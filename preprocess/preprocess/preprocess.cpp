@@ -80,7 +80,7 @@ std::string get_file_contents(const char *filename)
         in.close();
         return(contents);
     }
-    cout << "file not found" << endl;
+    cout << "file not found " << filename << endl;
     throw(errno);
 }
 
@@ -127,9 +127,22 @@ int main(int argc, char* argv[])
     messege = get_file_contents(file_path.c_str());
     filename = get_file_contents(filename_path.c_str());
     
-    //TODO:
+    
     //REGION GENERATE NEW FILENAME
-    filename2 = "somethingelse.txt" ;
+    try
+    {
+        StringSource(filename, true,
+                     new HexEncoder(
+                                    new StringSink(filename2)
+                                    ) // HexEncoder
+                     );
+    }
+    catch (const CryptoPP::Exception& e)
+    {
+        cerr << e.what() << endl;
+        exit(1);
+    }
+    
     save_file(filename2_path.c_str() , filename2);
     
     //GENERATE IV
@@ -199,7 +212,7 @@ int main(int argc, char* argv[])
     
 
     //cout << cipher <<endl << cipher_hex <<endl << iv_cipher_hex <<endl  ;
-    //cout << "ENCRYPTED !!!!" <<endl  ;
+    cout << "ENCRYPTED !!!!" <<endl  ;
     
     return 0;
 }

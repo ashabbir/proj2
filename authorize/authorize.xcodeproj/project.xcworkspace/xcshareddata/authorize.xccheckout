@@ -22,7 +22,7 @@
 		<key>A5218B63B4235CA462393BB129340BE38E8ACABF</key>
 		<string>../../..</string>
 		<key>ECD16732C03A65B392A8BF92DEDD1535B54E8896</key>
-		<string>../../../../..</string>
+		<string>../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>github.com:ashabbir/proj2.git</string>
@@ -38,7 +38,7 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>ECD16732C03A65B392A8BF92DEDD1535B54E8896</string>
 			<key>IDESourceControlWCCName</key>
-			<string>..</string>
+			<string></string>
 		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
