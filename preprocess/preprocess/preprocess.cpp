@@ -106,6 +106,8 @@ int main(int argc, char* argv[])
     
     //cout <<  iv_hex << endl;
     
+    
+    //hard coded file paths
     key_hex = get_file_contents("/Users/amd/code/cpp/proj2/key.txt");
     messege = get_file_contents("/Users/amd/code/cpp/proj2/file.txt");
     
@@ -159,6 +161,7 @@ int main(int argc, char* argv[])
     
     iv_cipher_hex = iv_hex + cipher_hex;
     
+    //hard coded file paths
     std::ofstream outfile("/Users/amd/code/cpp/proj2/cyphered.txt");
     outfile << iv_cipher_hex;
     outfile.close();
