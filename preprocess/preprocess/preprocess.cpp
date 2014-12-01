@@ -127,6 +127,7 @@ int main(int argc, char* argv[])
     messege = get_file_contents(file_path.c_str());
     filename = get_file_contents(filename_path.c_str());
     
+    //TODO:
     //REGION GENERATE NEW FILENAME
     filename2 = "somethingelse.txt" ;
     save_file(filename2_path.c_str() , filename2);

@@ -66,24 +66,31 @@ using namespace CryptoPP;
 int main(int argc, char* argv[])
 {
     AutoSeededRandomPool prng;
-    string cipher, encoded;
+    string key_hex;
+    
     
     //generate key
     SecByteBlock key(AES::DEFAULT_KEYLENGTH);
     prng.GenerateBlock(key, key.size());
     
-    // Pretty print key
-    encoded.clear();
+    //convert key into hex so we have save it to the file
+    key_hex.clear();
     StringSource(key, key.size(), true,
                  new HexEncoder(
-                                new StringSink(encoded)
+                                new StringSink(key_hex)
                                 ) // HexEncoder
                  ); // StringSource
-    cout << "key: " << encoded << endl;
+    //cout << "key: " << key_hex << endl;
     
     
-    std::ofstream outfile("/Users/amd/code/cpp/proj2/key.txt");
-    outfile << encoded;
+    
+    //save the key file in hex format
+    //string base_path = "/Users/avp/Dropbox/Projects/Cryptography/NewProject2/proj2/";
+    string base_path = "/Users/amd/code/cpp/proj2/";
+    string key_path = base_path + "key.txt";
+
+    std::ofstream outfile(key_path);
+    outfile << key_hex;
     outfile.close();
     
     cout << "KEY GENERATED !!!!" <<endl  ;
