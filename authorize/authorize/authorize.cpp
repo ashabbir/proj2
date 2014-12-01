@@ -53,6 +53,8 @@ using CryptoPP::SecByteBlock;
 #include "modes.h"
 #include "base32.h"
 
+#include<sstream>
+
 using namespace CryptoPP;
 
 
@@ -72,6 +74,34 @@ std::string get_file_contents(const char *filename)
     throw(errno);
 }
 
+int hexCharToInt(char a){
+    if(a>='0' && a<='9')
+        return(a-48);
+    else if(a>='A' && a<='Z')
+        return(a-55);
+    else
+        return(a-87);
+}
+
+std::string xorTwoHexStrings(string str1, string str2){
+    std::stringstream XORString;
+    for(int i=0;i<str2.length();i++){
+        XORString << hex << (hexCharToInt(str1[i])^hexCharToInt(str2[i]));
+    }
+    return XORString.str();
+}
+
+
+/*
+string xnorTwoHexStrings(string str1, string str2){
+    std::stringstream XNORString;
+    for(int i=0;i<str2.length();i++){
+        XNORString << hex << (~(hexCharToInt(str1[i])^hexCharToInt(str2[i])));
+    }
+    return XNORString.str();
+}
+
+ */
 
 void create_fk(string keyfile, string filename)
 {
@@ -117,6 +147,13 @@ void create_fk(string keyfile, string filename)
     std::ofstream outfile(base_path+"fkey.txt");
     outfile << hexFname + key << std::endl;
     outfile.close();
+    
+    
+    //const byte* keybyte = (const byte*) key.data();
+    //const byte* fnamebyte = (const byte*) hexFname.data();
+    
+    
+    
 
 }
 
