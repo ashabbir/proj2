@@ -201,7 +201,7 @@ int main(int argc, char* argv[])
         
         
         save_file( sfile_path.c_str(), message);
-        cout << "RECOVERED !!!" << endl << sfile_path << endl;
+        cout << "RECOVERED !!!" << endl ;
 
     }
     catch (const CryptoPP::Exception& d)

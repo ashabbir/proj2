@@ -77,6 +77,6 @@ int main(int argc, char* argv[])
     outfile << key_hex;
     outfile.close();
     
-    cout << "KEY GENERATED: " << endl << key_path<<endl  ;
+    cout << "KEY GENERATED: " << endl ;
     return 0;
 }

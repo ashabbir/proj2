@@ -119,8 +119,7 @@ void create_fkey(string keyfile, string p_filename)
     }
     save_file(sfile_path.c_str(), filename2);
 
-    //cout << "filename " << filename2 << endl;
-    
+    //pad fkey for same as key
     string fkey = key;
     string pad_fname = key;
     float key_len = strlen(key.c_str());
@@ -142,7 +141,6 @@ void create_fkey(string keyfile, string p_filename)
     {
         fkey[x]=pad_fname[x]^key[x];
     }
-    //cout  << "fkey: " <<  fkey << endl;
     
     
     string final_key;
@@ -161,35 +159,6 @@ void create_fkey(string keyfile, string p_filename)
     }
     save_file(fkey_path.c_str(), final_key);
 
-    
-    /*
-    test recovery of fkey
-
-    string temp_temp_key;
-    try
-    {
-        StringSource(temp_key, true,
-                     new HexDecoder(
-                                    new StringSink(temp_temp_key)
-                                    )
-                     );
-    }
-    catch (const CryptoPP::Exception& e)
-    {
-        cerr << e.what() << endl;
-        exit(1);
-    }
-    
-
-    string recovered_key = fkey;
-    for(int x=0; x<key_len; x++)
-    {
-        recovered_key[x]=fkey[x]^pad_fname[x];
-
-    }
-    cout  << "rkey: " <<  recovered_key << endl;
-    cout << " key: " << key << endl;
-*/
 }
 
 
@@ -197,7 +166,7 @@ int main(int argc, char * argv[])
 {
     //check the arguments
     if (argc < 3) {
-        std::cerr << argc <<endl <<"Usage: " << argv[0] <<endl;
+        std::cerr <<"Usage: ./authorize key.txt	filename.txt   " << endl;
         return 1;
     }
     

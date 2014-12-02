@@ -193,7 +193,7 @@ int main(int argc, char* argv[])
     
 
     //cout << cipher <<endl << cipher_hex <<endl << iv_cipher_hex <<endl  ;
-    cout << "ENCRYPTED !!!!" << endl << cypher_path  <<endl << filename2_path << endl  ;
+    cout << "ENCRYPTED !!!!" << endl  ;
     
     return 0;
 }
