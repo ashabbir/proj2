@@ -1,8 +1,6 @@
 //  authorize
-//
 //  Created by Anshul Vikram Pandey on 11/30/14.
 //  Copyright (c) 2014 Anshul Vikram Pandey. All rights reserved.
-//
 
 
 
@@ -56,6 +54,8 @@ using CryptoPP::SecByteBlock;
 using namespace CryptoPP;
 
 
+
+//FUNCTION TO READ FILES AND RETURN DATA
 std::string get_file_contents(const char *filename)
 {
     std::ifstream in(filename, std::ios::in | std::ios::binary);
@@ -73,7 +73,7 @@ std::string get_file_contents(const char *filename)
     throw(errno);
 }
 
-
+//FUNCTION TO SAVE FILES
 void save_file(const char *filename, string data){
     std::ofstream outfile(filename);
     outfile << data;
@@ -81,12 +81,12 @@ void save_file(const char *filename, string data){
 }
 
 
-void create_fk(string keyfile, string p_filename)
+void create_fkey(string keyfile, string p_filename)
 {
     string base_path = "./";
 #ifdef DEBUG
     cout << "running in debug" << endl;
-    // base_path = "/Users/avp/Dropbox/Projects/Cryptography/NewProject2/proj2/";
+    //base_path = "/Users/avp/Dropbox/Projects/Cryptography/NewProject2/proj2/";
     //base_path = "/Users/amd/code/cpp/proj2/";
     base_path = "/Users/ahmed/nyu/classes/crypto/proj2/";
 #endif
@@ -197,6 +197,7 @@ void create_fk(string keyfile, string p_filename)
 
 int main(int argc, char * argv[])
 {
+    //check the arguments
     if (argc < 3) {
         std::cerr << argc <<endl <<"Usage: " << argv[0] <<endl;
         return 1;
@@ -206,7 +207,7 @@ int main(int argc, char * argv[])
     string keyarg = argv[1];
     string filearg = argv[2];
 
-    create_fk(keyarg,filearg);
+    create_fkey(keyarg,filearg);
     cout << "AUTHORIZED !!"<<endl;
     return 0;
 }

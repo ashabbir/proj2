@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8D3208F21A2BC764004DF7FF /* keygen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8D3208F11A2BC764004DF7FF /* keygen.cpp */; };
-		E25285021A2C44F90090A096 /* libcryptopp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E25285011A2C44F90090A096 /* libcryptopp.a */; };
+		E2DCDA7A1A2D51D800D97427 /* libcryptopp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D3209841A2BC83D004DF7FF /* libcryptopp.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -173,7 +173,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E25285021A2C44F90090A096 /* libcryptopp.a in Frameworks */,
+				E2DCDA7A1A2D51D800D97427 /* libcryptopp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -525,6 +525,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/**",
+					/Users/ahmed/nyu/classes/crypto/proj2/5.6.2/lib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -541,6 +542,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/**",
+					/Users/ahmed/nyu/classes/crypto/proj2/5.6.2/lib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
