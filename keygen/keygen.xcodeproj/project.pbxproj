@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8D3208F21A2BC764004DF7FF /* keygen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8D3208F11A2BC764004DF7FF /* keygen.cpp */; };
-		E2DCDA7A1A2D51D800D97427 /* libcryptopp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D3209841A2BC83D004DF7FF /* libcryptopp.a */; };
+		E2DCDA7C1A2D532300D97427 /* libcryptopp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E2DCDA7B1A2D532300D97427 /* libcryptopp.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,146 +26,7 @@
 /* Begin PBXFileReference section */
 		8D3208EE1A2BC764004DF7FF /* keygen */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = keygen; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D3208F11A2BC764004DF7FF /* keygen.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = keygen.cpp; sourceTree = "<group>"; };
-		8D3208FB1A2BC83D004DF7FF /* 3way.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 3way.h; sourceTree = "<group>"; };
-		8D3208FC1A2BC83D004DF7FF /* adler32.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = adler32.h; sourceTree = "<group>"; };
-		8D3208FD1A2BC83D004DF7FF /* aes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = aes.h; sourceTree = "<group>"; };
-		8D3208FE1A2BC83D004DF7FF /* algebra.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = algebra.h; sourceTree = "<group>"; };
-		8D3208FF1A2BC83D004DF7FF /* algparam.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = algparam.h; sourceTree = "<group>"; };
-		8D3209001A2BC83D004DF7FF /* arc4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = arc4.h; sourceTree = "<group>"; };
-		8D3209011A2BC83D004DF7FF /* argnames.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = argnames.h; sourceTree = "<group>"; };
-		8D3209021A2BC83D004DF7FF /* asn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = asn.h; sourceTree = "<group>"; };
-		8D3209031A2BC83D004DF7FF /* authenc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = authenc.h; sourceTree = "<group>"; };
-		8D3209041A2BC83D004DF7FF /* base32.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = base32.h; sourceTree = "<group>"; };
-		8D3209051A2BC83D004DF7FF /* base64.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = base64.h; sourceTree = "<group>"; };
-		8D3209061A2BC83D004DF7FF /* basecode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = basecode.h; sourceTree = "<group>"; };
-		8D3209071A2BC83D004DF7FF /* bench.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bench.h; sourceTree = "<group>"; };
-		8D3209081A2BC83D004DF7FF /* blowfish.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = blowfish.h; sourceTree = "<group>"; };
-		8D3209091A2BC83D004DF7FF /* blumshub.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = blumshub.h; sourceTree = "<group>"; };
-		8D32090A1A2BC83D004DF7FF /* camellia.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = camellia.h; sourceTree = "<group>"; };
-		8D32090B1A2BC83D004DF7FF /* cast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cast.h; sourceTree = "<group>"; };
-		8D32090C1A2BC83D004DF7FF /* cbcmac.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cbcmac.h; sourceTree = "<group>"; };
-		8D32090D1A2BC83D004DF7FF /* ccm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ccm.h; sourceTree = "<group>"; };
-		8D32090E1A2BC83D004DF7FF /* channels.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = channels.h; sourceTree = "<group>"; };
-		8D32090F1A2BC83D004DF7FF /* cmac.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cmac.h; sourceTree = "<group>"; };
-		8D3209101A2BC83D004DF7FF /* config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
-		8D3209111A2BC83D004DF7FF /* cpu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cpu.h; sourceTree = "<group>"; };
-		8D3209121A2BC83D004DF7FF /* crc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = crc.h; sourceTree = "<group>"; };
-		8D3209131A2BC83D004DF7FF /* cryptlib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cryptlib.h; sourceTree = "<group>"; };
-		8D3209141A2BC83D004DF7FF /* default.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = default.h; sourceTree = "<group>"; };
-		8D3209151A2BC83D004DF7FF /* des.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = des.h; sourceTree = "<group>"; };
-		8D3209161A2BC83D004DF7FF /* dh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dh.h; sourceTree = "<group>"; };
-		8D3209171A2BC83D004DF7FF /* dh2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dh2.h; sourceTree = "<group>"; };
-		8D3209181A2BC83D004DF7FF /* dll.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dll.h; sourceTree = "<group>"; };
-		8D3209191A2BC83D004DF7FF /* dmac.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dmac.h; sourceTree = "<group>"; };
-		8D32091A1A2BC83D004DF7FF /* dsa.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dsa.h; sourceTree = "<group>"; };
-		8D32091B1A2BC83D004DF7FF /* eax.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = eax.h; sourceTree = "<group>"; };
-		8D32091C1A2BC83D004DF7FF /* ec2n.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ec2n.h; sourceTree = "<group>"; };
-		8D32091D1A2BC83D004DF7FF /* eccrypto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = eccrypto.h; sourceTree = "<group>"; };
-		8D32091E1A2BC83D004DF7FF /* ecp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ecp.h; sourceTree = "<group>"; };
-		8D32091F1A2BC83D004DF7FF /* elgamal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = elgamal.h; sourceTree = "<group>"; };
-		8D3209201A2BC83D004DF7FF /* emsa2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = emsa2.h; sourceTree = "<group>"; };
-		8D3209211A2BC83D004DF7FF /* eprecomp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = eprecomp.h; sourceTree = "<group>"; };
-		8D3209221A2BC83D004DF7FF /* esign.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = esign.h; sourceTree = "<group>"; };
-		8D3209231A2BC83D004DF7FF /* factory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = factory.h; sourceTree = "<group>"; };
-		8D3209241A2BC83D004DF7FF /* files.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = files.h; sourceTree = "<group>"; };
-		8D3209251A2BC83D004DF7FF /* filters.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = filters.h; sourceTree = "<group>"; };
-		8D3209261A2BC83D004DF7FF /* fips140.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fips140.h; sourceTree = "<group>"; };
-		8D3209271A2BC83D004DF7FF /* fltrimpl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fltrimpl.h; sourceTree = "<group>"; };
-		8D3209281A2BC83D004DF7FF /* gcm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gcm.h; sourceTree = "<group>"; };
-		8D3209291A2BC83D004DF7FF /* gf256.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gf256.h; sourceTree = "<group>"; };
-		8D32092A1A2BC83D004DF7FF /* gf2_32.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gf2_32.h; sourceTree = "<group>"; };
-		8D32092B1A2BC83D004DF7FF /* gf2n.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gf2n.h; sourceTree = "<group>"; };
-		8D32092C1A2BC83D004DF7FF /* gfpcrypt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gfpcrypt.h; sourceTree = "<group>"; };
-		8D32092D1A2BC83D004DF7FF /* gost.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gost.h; sourceTree = "<group>"; };
-		8D32092E1A2BC83D004DF7FF /* gzip.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gzip.h; sourceTree = "<group>"; };
-		8D32092F1A2BC83D004DF7FF /* hex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hex.h; sourceTree = "<group>"; };
-		8D3209301A2BC83D004DF7FF /* hmac.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hmac.h; sourceTree = "<group>"; };
-		8D3209311A2BC83D004DF7FF /* hrtimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hrtimer.h; sourceTree = "<group>"; };
-		8D3209321A2BC83D004DF7FF /* ida.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ida.h; sourceTree = "<group>"; };
-		8D3209331A2BC83D004DF7FF /* idea.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = idea.h; sourceTree = "<group>"; };
-		8D3209341A2BC83D004DF7FF /* integer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = integer.h; sourceTree = "<group>"; };
-		8D3209351A2BC83D004DF7FF /* iterhash.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iterhash.h; sourceTree = "<group>"; };
-		8D3209361A2BC83D004DF7FF /* lubyrack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = lubyrack.h; sourceTree = "<group>"; };
-		8D3209371A2BC83D004DF7FF /* luc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = luc.h; sourceTree = "<group>"; };
-		8D3209381A2BC83D004DF7FF /* mars.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mars.h; sourceTree = "<group>"; };
-		8D3209391A2BC83D004DF7FF /* md2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = md2.h; sourceTree = "<group>"; };
-		8D32093A1A2BC83D004DF7FF /* md4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = md4.h; sourceTree = "<group>"; };
-		8D32093B1A2BC83D004DF7FF /* md5.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = md5.h; sourceTree = "<group>"; };
-		8D32093C1A2BC83D004DF7FF /* mdc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mdc.h; sourceTree = "<group>"; };
-		8D32093D1A2BC83D004DF7FF /* misc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = misc.h; sourceTree = "<group>"; };
-		8D32093E1A2BC83D004DF7FF /* modarith.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = modarith.h; sourceTree = "<group>"; };
-		8D32093F1A2BC83D004DF7FF /* modes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = modes.h; sourceTree = "<group>"; };
-		8D3209401A2BC83D004DF7FF /* modexppc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = modexppc.h; sourceTree = "<group>"; };
-		8D3209411A2BC83D004DF7FF /* mqueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mqueue.h; sourceTree = "<group>"; };
-		8D3209421A2BC83D004DF7FF /* mqv.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mqv.h; sourceTree = "<group>"; };
-		8D3209431A2BC83D004DF7FF /* nbtheory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = nbtheory.h; sourceTree = "<group>"; };
-		8D3209441A2BC83D004DF7FF /* network.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = network.h; sourceTree = "<group>"; };
-		8D3209451A2BC83D004DF7FF /* nr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = nr.h; sourceTree = "<group>"; };
-		8D3209461A2BC83D004DF7FF /* oaep.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = oaep.h; sourceTree = "<group>"; };
-		8D3209471A2BC83D004DF7FF /* oids.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = oids.h; sourceTree = "<group>"; };
-		8D3209481A2BC83D004DF7FF /* osrng.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = osrng.h; sourceTree = "<group>"; };
-		8D3209491A2BC83D004DF7FF /* panama.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = panama.h; sourceTree = "<group>"; };
-		8D32094A1A2BC83D004DF7FF /* pch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pch.h; sourceTree = "<group>"; };
-		8D32094B1A2BC83D004DF7FF /* pkcspad.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pkcspad.h; sourceTree = "<group>"; };
-		8D32094C1A2BC83D004DF7FF /* polynomi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = polynomi.h; sourceTree = "<group>"; };
-		8D32094D1A2BC83D004DF7FF /* pssr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pssr.h; sourceTree = "<group>"; };
-		8D32094E1A2BC83D004DF7FF /* pubkey.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pubkey.h; sourceTree = "<group>"; };
-		8D32094F1A2BC83D004DF7FF /* pwdbased.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pwdbased.h; sourceTree = "<group>"; };
-		8D3209501A2BC83D004DF7FF /* queue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = queue.h; sourceTree = "<group>"; };
-		8D3209511A2BC83D004DF7FF /* rabin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rabin.h; sourceTree = "<group>"; };
-		8D3209521A2BC83D004DF7FF /* randpool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = randpool.h; sourceTree = "<group>"; };
-		8D3209531A2BC83D004DF7FF /* rc2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rc2.h; sourceTree = "<group>"; };
-		8D3209541A2BC83D004DF7FF /* rc5.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rc5.h; sourceTree = "<group>"; };
-		8D3209551A2BC83D004DF7FF /* rc6.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rc6.h; sourceTree = "<group>"; };
-		8D3209561A2BC83D004DF7FF /* resource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = resource.h; sourceTree = "<group>"; };
-		8D3209571A2BC83D004DF7FF /* rijndael.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rijndael.h; sourceTree = "<group>"; };
-		8D3209581A2BC83D004DF7FF /* ripemd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ripemd.h; sourceTree = "<group>"; };
-		8D3209591A2BC83D004DF7FF /* rng.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rng.h; sourceTree = "<group>"; };
-		8D32095A1A2BC83D004DF7FF /* rsa.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rsa.h; sourceTree = "<group>"; };
-		8D32095B1A2BC83D004DF7FF /* rw.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rw.h; sourceTree = "<group>"; };
-		8D32095C1A2BC83D004DF7FF /* safer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = safer.h; sourceTree = "<group>"; };
-		8D32095D1A2BC83D004DF7FF /* salsa.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = salsa.h; sourceTree = "<group>"; };
-		8D32095E1A2BC83D004DF7FF /* seal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = seal.h; sourceTree = "<group>"; };
-		8D32095F1A2BC83D004DF7FF /* secblock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = secblock.h; sourceTree = "<group>"; };
-		8D3209601A2BC83D004DF7FF /* seckey.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = seckey.h; sourceTree = "<group>"; };
-		8D3209611A2BC83D004DF7FF /* seed.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = seed.h; sourceTree = "<group>"; };
-		8D3209621A2BC83D004DF7FF /* serpent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = serpent.h; sourceTree = "<group>"; };
-		8D3209631A2BC83D004DF7FF /* serpentp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = serpentp.h; sourceTree = "<group>"; };
-		8D3209641A2BC83D004DF7FF /* sha.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sha.h; sourceTree = "<group>"; };
-		8D3209651A2BC83D004DF7FF /* sha3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sha3.h; sourceTree = "<group>"; };
-		8D3209661A2BC83D004DF7FF /* shacal2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = shacal2.h; sourceTree = "<group>"; };
-		8D3209671A2BC83D004DF7FF /* shark.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = shark.h; sourceTree = "<group>"; };
-		8D3209681A2BC83D004DF7FF /* simple.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = simple.h; sourceTree = "<group>"; };
-		8D3209691A2BC83D004DF7FF /* skipjack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skipjack.h; sourceTree = "<group>"; };
-		8D32096A1A2BC83D004DF7FF /* smartptr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = smartptr.h; sourceTree = "<group>"; };
-		8D32096B1A2BC83D004DF7FF /* socketft.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = socketft.h; sourceTree = "<group>"; };
-		8D32096C1A2BC83D004DF7FF /* sosemanuk.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sosemanuk.h; sourceTree = "<group>"; };
-		8D32096D1A2BC83D004DF7FF /* square.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = square.h; sourceTree = "<group>"; };
-		8D32096E1A2BC83D004DF7FF /* stdcpp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stdcpp.h; sourceTree = "<group>"; };
-		8D32096F1A2BC83D004DF7FF /* strciphr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = strciphr.h; sourceTree = "<group>"; };
-		8D3209701A2BC83D004DF7FF /* tea.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tea.h; sourceTree = "<group>"; };
-		8D3209711A2BC83D004DF7FF /* tiger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tiger.h; sourceTree = "<group>"; };
-		8D3209721A2BC83D004DF7FF /* trdlocal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = trdlocal.h; sourceTree = "<group>"; };
-		8D3209731A2BC83D004DF7FF /* trunhash.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = trunhash.h; sourceTree = "<group>"; };
-		8D3209741A2BC83D004DF7FF /* ttmac.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ttmac.h; sourceTree = "<group>"; };
-		8D3209751A2BC83D004DF7FF /* twofish.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = twofish.h; sourceTree = "<group>"; };
-		8D3209761A2BC83D004DF7FF /* validate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = validate.h; sourceTree = "<group>"; };
-		8D3209771A2BC83D004DF7FF /* vmac.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = vmac.h; sourceTree = "<group>"; };
-		8D3209781A2BC83D004DF7FF /* wait.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = wait.h; sourceTree = "<group>"; };
-		8D3209791A2BC83D004DF7FF /* wake.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = wake.h; sourceTree = "<group>"; };
-		8D32097A1A2BC83D004DF7FF /* whrlpool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = whrlpool.h; sourceTree = "<group>"; };
-		8D32097B1A2BC83D004DF7FF /* winpipes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = winpipes.h; sourceTree = "<group>"; };
-		8D32097C1A2BC83D004DF7FF /* words.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = words.h; sourceTree = "<group>"; };
-		8D32097D1A2BC83D004DF7FF /* xtr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xtr.h; sourceTree = "<group>"; };
-		8D32097E1A2BC83D004DF7FF /* xtrcrypt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xtrcrypt.h; sourceTree = "<group>"; };
-		8D32097F1A2BC83D004DF7FF /* zdeflate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = zdeflate.h; sourceTree = "<group>"; };
-		8D3209801A2BC83D004DF7FF /* zinflate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = zinflate.h; sourceTree = "<group>"; };
-		8D3209811A2BC83D004DF7FF /* zlib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = zlib.h; sourceTree = "<group>"; };
-		8D3209821A2BC83D004DF7FF /* INSTALL_RECEIPT.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = INSTALL_RECEIPT.json; sourceTree = "<group>"; };
-		8D3209841A2BC83D004DF7FF /* libcryptopp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcryptopp.a; sourceTree = "<group>"; };
-		8D3209851A2BC83D004DF7FF /* License.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = License.txt; sourceTree = "<group>"; };
-		8D3209861A2BC83D004DF7FF /* Readme.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Readme.txt; sourceTree = "<group>"; };
-		E25285011A2C44F90090A096 /* libcryptopp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcryptopp.a; sourceTree = "<group>"; };
+		E2DCDA7B1A2D532300D97427 /* libcryptopp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcryptopp.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,7 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2DCDA7A1A2D51D800D97427 /* libcryptopp.a in Frameworks */,
+				E2DCDA7C1A2D532300D97427 /* libcryptopp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,8 +44,7 @@
 		8D3208E51A2BC764004DF7FF = {
 			isa = PBXGroup;
 			children = (
-				E25285011A2C44F90090A096 /* libcryptopp.a */,
-				8D3208F81A2BC83D004DF7FF /* 5.6.2 */,
+				E2DCDA7B1A2D532300D97427 /* libcryptopp.a */,
 				8D3208F01A2BC764004DF7FF /* keygen */,
 				8D3208EF1A2BC764004DF7FF /* Products */,
 			);
@@ -204,177 +64,6 @@
 				8D3208F11A2BC764004DF7FF /* keygen.cpp */,
 			);
 			path = keygen;
-			sourceTree = "<group>";
-		};
-		8D3208F81A2BC83D004DF7FF /* 5.6.2 */ = {
-			isa = PBXGroup;
-			children = (
-				8D3208F91A2BC83D004DF7FF /* include */,
-				8D3209821A2BC83D004DF7FF /* INSTALL_RECEIPT.json */,
-				8D3209831A2BC83D004DF7FF /* lib */,
-				8D3209851A2BC83D004DF7FF /* License.txt */,
-				8D3209861A2BC83D004DF7FF /* Readme.txt */,
-			);
-			name = 5.6.2;
-			path = ../5.6.2;
-			sourceTree = "<group>";
-		};
-		8D3208F91A2BC83D004DF7FF /* include */ = {
-			isa = PBXGroup;
-			children = (
-				8D3208FA1A2BC83D004DF7FF /* cryptopp */,
-			);
-			path = include;
-			sourceTree = "<group>";
-		};
-		8D3208FA1A2BC83D004DF7FF /* cryptopp */ = {
-			isa = PBXGroup;
-			children = (
-				8D3208FB1A2BC83D004DF7FF /* 3way.h */,
-				8D3208FC1A2BC83D004DF7FF /* adler32.h */,
-				8D3208FD1A2BC83D004DF7FF /* aes.h */,
-				8D3208FE1A2BC83D004DF7FF /* algebra.h */,
-				8D3208FF1A2BC83D004DF7FF /* algparam.h */,
-				8D3209001A2BC83D004DF7FF /* arc4.h */,
-				8D3209011A2BC83D004DF7FF /* argnames.h */,
-				8D3209021A2BC83D004DF7FF /* asn.h */,
-				8D3209031A2BC83D004DF7FF /* authenc.h */,
-				8D3209041A2BC83D004DF7FF /* base32.h */,
-				8D3209051A2BC83D004DF7FF /* base64.h */,
-				8D3209061A2BC83D004DF7FF /* basecode.h */,
-				8D3209071A2BC83D004DF7FF /* bench.h */,
-				8D3209081A2BC83D004DF7FF /* blowfish.h */,
-				8D3209091A2BC83D004DF7FF /* blumshub.h */,
-				8D32090A1A2BC83D004DF7FF /* camellia.h */,
-				8D32090B1A2BC83D004DF7FF /* cast.h */,
-				8D32090C1A2BC83D004DF7FF /* cbcmac.h */,
-				8D32090D1A2BC83D004DF7FF /* ccm.h */,
-				8D32090E1A2BC83D004DF7FF /* channels.h */,
-				8D32090F1A2BC83D004DF7FF /* cmac.h */,
-				8D3209101A2BC83D004DF7FF /* config.h */,
-				8D3209111A2BC83D004DF7FF /* cpu.h */,
-				8D3209121A2BC83D004DF7FF /* crc.h */,
-				8D3209131A2BC83D004DF7FF /* cryptlib.h */,
-				8D3209141A2BC83D004DF7FF /* default.h */,
-				8D3209151A2BC83D004DF7FF /* des.h */,
-				8D3209161A2BC83D004DF7FF /* dh.h */,
-				8D3209171A2BC83D004DF7FF /* dh2.h */,
-				8D3209181A2BC83D004DF7FF /* dll.h */,
-				8D3209191A2BC83D004DF7FF /* dmac.h */,
-				8D32091A1A2BC83D004DF7FF /* dsa.h */,
-				8D32091B1A2BC83D004DF7FF /* eax.h */,
-				8D32091C1A2BC83D004DF7FF /* ec2n.h */,
-				8D32091D1A2BC83D004DF7FF /* eccrypto.h */,
-				8D32091E1A2BC83D004DF7FF /* ecp.h */,
-				8D32091F1A2BC83D004DF7FF /* elgamal.h */,
-				8D3209201A2BC83D004DF7FF /* emsa2.h */,
-				8D3209211A2BC83D004DF7FF /* eprecomp.h */,
-				8D3209221A2BC83D004DF7FF /* esign.h */,
-				8D3209231A2BC83D004DF7FF /* factory.h */,
-				8D3209241A2BC83D004DF7FF /* files.h */,
-				8D3209251A2BC83D004DF7FF /* filters.h */,
-				8D3209261A2BC83D004DF7FF /* fips140.h */,
-				8D3209271A2BC83D004DF7FF /* fltrimpl.h */,
-				8D3209281A2BC83D004DF7FF /* gcm.h */,
-				8D3209291A2BC83D004DF7FF /* gf256.h */,
-				8D32092A1A2BC83D004DF7FF /* gf2_32.h */,
-				8D32092B1A2BC83D004DF7FF /* gf2n.h */,
-				8D32092C1A2BC83D004DF7FF /* gfpcrypt.h */,
-				8D32092D1A2BC83D004DF7FF /* gost.h */,
-				8D32092E1A2BC83D004DF7FF /* gzip.h */,
-				8D32092F1A2BC83D004DF7FF /* hex.h */,
-				8D3209301A2BC83D004DF7FF /* hmac.h */,
-				8D3209311A2BC83D004DF7FF /* hrtimer.h */,
-				8D3209321A2BC83D004DF7FF /* ida.h */,
-				8D3209331A2BC83D004DF7FF /* idea.h */,
-				8D3209341A2BC83D004DF7FF /* integer.h */,
-				8D3209351A2BC83D004DF7FF /* iterhash.h */,
-				8D3209361A2BC83D004DF7FF /* lubyrack.h */,
-				8D3209371A2BC83D004DF7FF /* luc.h */,
-				8D3209381A2BC83D004DF7FF /* mars.h */,
-				8D3209391A2BC83D004DF7FF /* md2.h */,
-				8D32093A1A2BC83D004DF7FF /* md4.h */,
-				8D32093B1A2BC83D004DF7FF /* md5.h */,
-				8D32093C1A2BC83D004DF7FF /* mdc.h */,
-				8D32093D1A2BC83D004DF7FF /* misc.h */,
-				8D32093E1A2BC83D004DF7FF /* modarith.h */,
-				8D32093F1A2BC83D004DF7FF /* modes.h */,
-				8D3209401A2BC83D004DF7FF /* modexppc.h */,
-				8D3209411A2BC83D004DF7FF /* mqueue.h */,
-				8D3209421A2BC83D004DF7FF /* mqv.h */,
-				8D3209431A2BC83D004DF7FF /* nbtheory.h */,
-				8D3209441A2BC83D004DF7FF /* network.h */,
-				8D3209451A2BC83D004DF7FF /* nr.h */,
-				8D3209461A2BC83D004DF7FF /* oaep.h */,
-				8D3209471A2BC83D004DF7FF /* oids.h */,
-				8D3209481A2BC83D004DF7FF /* osrng.h */,
-				8D3209491A2BC83D004DF7FF /* panama.h */,
-				8D32094A1A2BC83D004DF7FF /* pch.h */,
-				8D32094B1A2BC83D004DF7FF /* pkcspad.h */,
-				8D32094C1A2BC83D004DF7FF /* polynomi.h */,
-				8D32094D1A2BC83D004DF7FF /* pssr.h */,
-				8D32094E1A2BC83D004DF7FF /* pubkey.h */,
-				8D32094F1A2BC83D004DF7FF /* pwdbased.h */,
-				8D3209501A2BC83D004DF7FF /* queue.h */,
-				8D3209511A2BC83D004DF7FF /* rabin.h */,
-				8D3209521A2BC83D004DF7FF /* randpool.h */,
-				8D3209531A2BC83D004DF7FF /* rc2.h */,
-				8D3209541A2BC83D004DF7FF /* rc5.h */,
-				8D3209551A2BC83D004DF7FF /* rc6.h */,
-				8D3209561A2BC83D004DF7FF /* resource.h */,
-				8D3209571A2BC83D004DF7FF /* rijndael.h */,
-				8D3209581A2BC83D004DF7FF /* ripemd.h */,
-				8D3209591A2BC83D004DF7FF /* rng.h */,
-				8D32095A1A2BC83D004DF7FF /* rsa.h */,
-				8D32095B1A2BC83D004DF7FF /* rw.h */,
-				8D32095C1A2BC83D004DF7FF /* safer.h */,
-				8D32095D1A2BC83D004DF7FF /* salsa.h */,
-				8D32095E1A2BC83D004DF7FF /* seal.h */,
-				8D32095F1A2BC83D004DF7FF /* secblock.h */,
-				8D3209601A2BC83D004DF7FF /* seckey.h */,
-				8D3209611A2BC83D004DF7FF /* seed.h */,
-				8D3209621A2BC83D004DF7FF /* serpent.h */,
-				8D3209631A2BC83D004DF7FF /* serpentp.h */,
-				8D3209641A2BC83D004DF7FF /* sha.h */,
-				8D3209651A2BC83D004DF7FF /* sha3.h */,
-				8D3209661A2BC83D004DF7FF /* shacal2.h */,
-				8D3209671A2BC83D004DF7FF /* shark.h */,
-				8D3209681A2BC83D004DF7FF /* simple.h */,
-				8D3209691A2BC83D004DF7FF /* skipjack.h */,
-				8D32096A1A2BC83D004DF7FF /* smartptr.h */,
-				8D32096B1A2BC83D004DF7FF /* socketft.h */,
-				8D32096C1A2BC83D004DF7FF /* sosemanuk.h */,
-				8D32096D1A2BC83D004DF7FF /* square.h */,
-				8D32096E1A2BC83D004DF7FF /* stdcpp.h */,
-				8D32096F1A2BC83D004DF7FF /* strciphr.h */,
-				8D3209701A2BC83D004DF7FF /* tea.h */,
-				8D3209711A2BC83D004DF7FF /* tiger.h */,
-				8D3209721A2BC83D004DF7FF /* trdlocal.h */,
-				8D3209731A2BC83D004DF7FF /* trunhash.h */,
-				8D3209741A2BC83D004DF7FF /* ttmac.h */,
-				8D3209751A2BC83D004DF7FF /* twofish.h */,
-				8D3209761A2BC83D004DF7FF /* validate.h */,
-				8D3209771A2BC83D004DF7FF /* vmac.h */,
-				8D3209781A2BC83D004DF7FF /* wait.h */,
-				8D3209791A2BC83D004DF7FF /* wake.h */,
-				8D32097A1A2BC83D004DF7FF /* whrlpool.h */,
-				8D32097B1A2BC83D004DF7FF /* winpipes.h */,
-				8D32097C1A2BC83D004DF7FF /* words.h */,
-				8D32097D1A2BC83D004DF7FF /* xtr.h */,
-				8D32097E1A2BC83D004DF7FF /* xtrcrypt.h */,
-				8D32097F1A2BC83D004DF7FF /* zdeflate.h */,
-				8D3209801A2BC83D004DF7FF /* zinflate.h */,
-				8D3209811A2BC83D004DF7FF /* zlib.h */,
-			);
-			path = cryptopp;
-			sourceTree = "<group>";
-		};
-		8D3209831A2BC83D004DF7FF /* lib */ = {
-			isa = PBXGroup;
-			children = (
-				8D3209841A2BC83D004DF7FF /* libcryptopp.a */,
-			);
-			path = lib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -526,6 +215,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/**",
 					/Users/ahmed/nyu/classes/crypto/proj2/5.6.2/lib,
+					"$(PROJECT_DIR)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -543,6 +233,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/**",
 					/Users/ahmed/nyu/classes/crypto/proj2/5.6.2/lib,
+					"$(PROJECT_DIR)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
