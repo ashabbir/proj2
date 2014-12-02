@@ -1,22 +1,5 @@
-//
-//  main.cpp
-//  preprocess
-//
-//  Created by Ahmed Shabbir on 11/30/14.
-//  Copyright (c) 2014 NYU. All rights reserved.
-//
-
-
-// KeyGen.cpp : Defines the entry point for the console application.
-//
-
-//
-//  main.cpp
-//  crypto_test
-//
 //  Created by Ahmed Shabbir on 11/28/14.
 //  Copyright (c) 2014 NYU. All rights reserved.
-//
 
 
 
@@ -57,9 +40,6 @@ using CryptoPP::GCM;
 #include "secblock.h"
 using CryptoPP::SecByteBlock;
 
-
-
-#include "rsa.h"
 #include "files.h"
 #include "modes.h"
 #include "base32.h"
@@ -67,6 +47,8 @@ using CryptoPP::SecByteBlock;
 using namespace CryptoPP;
 
 
+
+//GENERAL FUNCTIONS TO SAVE FILE OPEN FILE
 std::string get_file_contents(const char *filename)
 {
     std::ifstream in(filename, std::ios::in | std::ios::binary);
@@ -84,7 +66,7 @@ std::string get_file_contents(const char *filename)
     throw(errno);
 }
 
-
+//GENERAL FUNCTIONS TO SAVE FILE OPEN FILE
 void save_file(const char *filename, string data){
     std::ofstream outfile(filename);
     outfile << data;
@@ -96,28 +78,22 @@ void save_file(const char *filename, string data){
 
 int main(int argc, char* argv[])
 {
-    
-    
+    //CHECK PARAMS
     if (argc < 4) {
-        std::cerr << argc <<endl <<"Usage: " << argv[0] <<endl;
+        std::cerr <<"Usage: ./preprocess	key.txt   file.txt   filename.txt   (returning files efile.txt and efilename.txt) " << endl;
         return 1;
     }
     
-    
-    //cout << "0: " << argv[0]<< endl << "1: " <<argv[1] << endl << "2: " <<argv[2]<< endl << "3: " <<argv[3] << endl;
-    
+    string base_path = "./";
+#ifdef DEBUG
+    base_path =  __FILE__ ;
+    base_path = base_path.replace(base_path.find("/preprocess/preprocess/preprocess.cpp"), sizeof("/preprocess/preprocess/preprocess.cpp")-1, "/");
+#endif
     
     string cipher, cipher_hex , iv_hex, key , key_hex , messege, iv_cipher_hex, filename , filename2;
     AutoSeededRandomPool prng;
     
-    
-    
-    string base_path = "./";
-#ifdef DEBUG
-    cout << "running in debug" << endl;
-    base_path = "/Users/amd/code/cpp/proj2/";
-    // base_path = "/Users/avp/Dropbox/Projects/Cryptography/NewProject2/proj2/";
-#endif
+
     
     string key_path = base_path + argv[1];
     string file_path = base_path + argv[2];
@@ -126,7 +102,6 @@ int main(int argc, char* argv[])
     string filename2_path = base_path + "e" + argv[3];
     
     
-    //cout << "0: " << key_path << endl << "1: " << file_path << endl << "2: " <<  cypher_path << endl << "3: " << filename_path << endl;
     
     key_hex = get_file_contents(key_path.c_str());
     messege = get_file_contents(file_path.c_str());
@@ -166,6 +141,7 @@ int main(int argc, char* argv[])
     {
         
         //cout << key_hex << endl;
+        //example taken from cryptowiki
         StringSource(key_hex, true,
                      new HexDecoder(
                                     new StringSink(key)
@@ -178,8 +154,7 @@ int main(int argc, char* argv[])
         CBC_Mode< AES> ::Encryption e;
         e.SetKeyWithIV((byte*)key.c_str(), key.size(), iv);
         
-        // The StreamTransformationFilter removes
-        //  padding as required.
+        //remove padding.
         StringSource s(messege, true,
                        new StreamTransformationFilter(e,
                                                       new StringSink(cipher)
@@ -202,6 +177,7 @@ int main(int argc, char* argv[])
         exit(1);
     }
     
+    //example taken from cryptowiki
     StringSource(cipher, true,
                  new HexEncoder(
                                 new StringSink(cipher_hex)
@@ -217,7 +193,7 @@ int main(int argc, char* argv[])
     
 
     //cout << cipher <<endl << cipher_hex <<endl << iv_cipher_hex <<endl  ;
-    cout << "ENCRYPTED !!!!" <<endl  ;
+    cout << "ENCRYPTED !!!!" << endl << cypher_path  <<endl << filename2_path << endl  ;
     
     return 0;
 }

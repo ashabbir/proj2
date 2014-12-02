@@ -1,6 +1,6 @@
 
 //  recover.cpp
-//  Created by Ahmed Shabbir on 11/30/14.
+//  Created by Ahmed & Anshul on 11/30/14.
 //  Copyright (c) 2014 NYU. All rights reserved.
 
 
@@ -43,24 +43,14 @@ using CryptoPP::GCM;
 using CryptoPP::SecByteBlock;
 
 
-
-#include "rsa.h"
 #include "files.h"
 #include "modes.h"
 #include "base32.h"
 
 using namespace CryptoPP;
 
-#include <stdio.h>  /* defines FILENAME_MAX */
-#ifdef WINDOWS
-    #include <direct.h>
-    #define GetCurrentDir _getcwd
-#else
-    #include <unistd.h>
-    #define GetCurrentDir getcwd
-#endif
 
-
+//GENERIC SAVE READ FILE
 std::string get_file_contents(const char *filename)
 {
     std::ifstream in(filename, std::ios::in | std::ios::binary);
@@ -91,24 +81,23 @@ void save_file(const char *filename, string data){
 int main(int argc, char* argv[])
 {
 
+    //CHECK PARAMS
     if (argc < 4) {
-        std::cerr << argc <<endl <<"Usage: " << argv[0] <<endl;
+        std::cerr <<"Usage: ./recover	efile.txt   efilename.txt   fkey.txt" << endl;
         return 1;
     }
-    //cout << "0: " << argv[0]<< endl << "1: " <<argv[1] << endl << "2: " <<argv[2]<< endl << "3: " <<argv[3] << endl;
     
     
     string cipher, cipher_hex ,iv_hex, iv ,messege , filename , filename2 , fkey, fkey_hex , message;
     AutoSeededRandomPool prng;
     
-    
+    //SET PATHS
     string base_path = "./";
 #ifdef DEBUG
-    cout << "running in debug" << endl;
-    //base_path = "/Users/amd/code/cpp/proj2/";
-    base_path = "/Users/ahmed/nyu/classes/crypto/proj2/";
-    // base_path = "/Users/avp/Dropbox/Projects/Cryptography/NewProject2/proj2/";
+    base_path =  __FILE__ ;
+    base_path = base_path.replace(base_path.find("/recover/recover/recover.cpp"), sizeof("/recover/recover/recover.cpp")-1, "/");
 #endif
+    
     string fkey_path = base_path + argv[3];
     string efile_path = base_path + argv[1];
     string efilename_path = base_path + argv[2];
@@ -118,9 +107,7 @@ int main(int argc, char* argv[])
 
 
 
-    
-    //cout << "0: " << key_path << endl << "1: " << file_path << endl << "2: " <<  cypher_path << endl << "3: " << filename_path << endl;
-    
+    //read fkey and hexdecode it
     string temp_fkey_hex = get_file_contents(fkey_path.c_str());
     try
     {
@@ -136,17 +123,12 @@ int main(int argc, char* argv[])
         exit(1);
     }
 
-    //cout << temp_fkey_hex << " : read" << endl;
-    //cout << fkey_hex <<  " : converted " <<endl;
-    
-    string fname =  get_file_contents(efilename_path.c_str());
-    //cout << "efilename " << fname << endl;
-
-    
-    //get the key from fkey (key = fkey xor efilename)
-    string pad_fname = fkey_hex;
-
     float key_len = fkey_hex.length() ;
+    
+    
+    //read filename and pad legth should be atleast equal key
+    string fname =  get_file_contents(efilename_path.c_str());
+    string pad_fname = fkey_hex;
     
     int i =0;
     for (int x = 0; x < key_len; x ++ ) {
@@ -156,16 +138,20 @@ int main(int argc, char* argv[])
             i=0;
         }
     }
-    //cout << "pad filename " << pad_fname << endl;
+    
+    //get the key from fkey (key = fkey xor efilename)
     string recovered_key = fkey_hex;
     for(int x=0; x<key_len; x++)
     {
         recovered_key[x]=fkey_hex[x]^pad_fname[x];
     }
     
-    //cout << "rkey  " << recovered_key << endl;
-    cipher_hex = get_file_contents(efile_path.c_str());
 
+    //get cipher text
+    cipher_hex = get_file_contents(efile_path.c_str());
+    
+    
+    //extract iv
     iv_hex = cipher_hex.substr(0, 32);
     StringSource(iv_hex, true,
                  new HexDecoder(
@@ -173,7 +159,7 @@ int main(int argc, char* argv[])
                                 ) // HexEncoder
                  ); // StringSource
 
-    
+    //remove iv from cipher
     cipher_hex.erase(0, 32);
     StringSource(cipher_hex, true,
                  new HexDecoder(
@@ -189,7 +175,6 @@ int main(int argc, char* argv[])
                                 ) // HexEncoder
                  ); // StringSource
 
-    //cout << fkey_hex<< endl << fkey <<endl;
     
     try
     {
@@ -216,7 +201,7 @@ int main(int argc, char* argv[])
         
         
         save_file( sfile_path.c_str(), message);
-        cout << "RECOVERED !!!" << endl;
+        cout << "RECOVERED !!!" << endl << sfile_path << endl;
 
     }
     catch (const CryptoPP::Exception& d)

@@ -85,10 +85,8 @@ void create_fkey(string keyfile, string p_filename)
 {
     string base_path = "./";
 #ifdef DEBUG
-    cout << "running in debug" << endl;
-    //base_path = "/Users/avp/Dropbox/Projects/Cryptography/NewProject2/proj2/";
-    //base_path = "/Users/amd/code/cpp/proj2/";
-    base_path = "/Users/ahmed/nyu/classes/crypto/proj2/";
+    base_path =  __FILE__ ;
+    base_path = base_path.replace(base_path.find("/authorize/authorize/authorize.cpp"), sizeof("/authorize/authorize/authorize.cpp")-1, "/");
 #endif
     
     string key_path = base_path + keyfile;
