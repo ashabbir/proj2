@@ -62,7 +62,7 @@ int main(int argc, char* argv[])
     
     
     
-    string public_key_path = base_path + "signpublickey.txt";
+    string public_key_path = base_path + "pub_key.txt";
     string message_path = base_path + "message.txt";
     string sign_path = base_path + "signature.txt";
     string result_path = base_path + "sign_result.txt";

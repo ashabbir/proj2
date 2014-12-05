@@ -70,8 +70,8 @@ int main(int argc, char** argv)
     string priavte_key_hex;
     
     //save the key file in hex format
-    string public_key_path = base_path + "signpublickey.txt";
-    string private_key_path = base_path + "signsecretkey.txt";
+    string public_key_path = base_path + "pub_key.txt";
+    string private_key_path = base_path + "priv_key.txt";
     string message_path = base_path + "message.txt";
    
     // http://www.cryptopp.com/docs/ref/class_auto_seeded_random_pool.html

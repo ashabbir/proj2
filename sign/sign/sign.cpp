@@ -80,7 +80,7 @@ int main(int argc, char* argv[])
     
     
     
-    string secret_key_path = base_path + "signsecretkey.txt";
+    string secret_key_path = base_path + "priv_key.txt";
     string message_path = base_path + "message.txt";
     string sign_path = base_path + "signature.txt";
     
